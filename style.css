@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+html{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+/*VIDEO BACKGROUND*/
+.video-background{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.video-overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.213);
+}
+.container{
+    min-width: 580px;
+    min-height: 304px;
+    color: #fff;
+    margin: 0 auto;
+    padding: 25px 25px;
+    border-radius: 40px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #0259bda8, #dd16abab);
+}
+.input-container{
+    position: relative;
+    top: 0px;
+    width: auto;
+    height: auto;
+}
+h1{
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+/*FORM*/
+.form{
+    width: 540px;
+}
+label{
+    font-weight: 500;
+    margin-left: 10px;
+    
+}
+input {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-family:'Raleway', sans-serif;
+}
+/*BUTTON*/
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 15px;
+    border: none;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #dd16abeb, #0259bddf);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in ;
+}
+button:hover{
+    filter: brightness(125%);
+    transform: scale(110%);
+}
+/*COUNTDOWN*/
+ul {
+    margin-left: -45px;
+}
+li{
+    display: inline-block;
+    font-size: 30px;
+    list-style-type: none;
+    padding: 10px;
+    text-transform: uppercase;
+}
+li span{
+    display: block;
+    font-size: 80px;
+    text-align: center;
+}
+.complete{
+    position: relative;
+    top: 60px;
+}
+.complete-title{
+    animation: complete 7s infinite;
+}
+
+/*LOADING SCREEN*/
+.loading-spinner{
+    width: 100%;
+    height: 100%;
+    background-color: #1d1c1c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.spinner {
+    position: relative;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+}
+.spinner::before,
+.spinner:after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+.spinner:before {
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(70deg, #dd16abfc 0%,#0259bd 100% );
+    animation: spin .6s infinite linear;
+}
+.spinner:after {
+    width: 90%;
+    height: 90%;
+    background-color: #1d1c1c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*ANIMATIONS*/
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+@keyframes complete{
+    0%{
+        color: #780206;
+        transform:rotateX(180deg);
+    }
+    25%{
+        color: #19a403;
+    }
+    50%{
+        color: #21f800;
+        transform: scale(1.5);
+        
+    }
+    75%{
+        color: #0402a1;
+    }
+    100%{
+        color: #780206;
+        transform:rotateX(180deg);
+    }
+}
+/*---@MEDIA---*/
+@media screen and (min-width: 250px) {
+    .video-background {
+        height: 101vh;
+        width: 100vw;
+    }
+    video{
+        object-fit: cover;
+    }
+    .container{
+        min-width: unset;
+        width: 100vw;
+        min-height: 250px;
+        padding: 20px;
+        margin: auto;
+    }
+    .form{
+        min-width: none;
+        width: 220px;
+    }
+    li span{
+        font-size: 3rem;
+    }
+    li{
+        display: inline-block;
+        font-size: .8rem;
+        padding: 5px;
+    }
+    h1{
+        font-size: 1.3rem;
+        max-width: 290px;
+    }
+    @keyframes complete{
+        50%{
+            color: #21f800;
+            transform: scale(1.2);
+        }}
+    }
+
+@media screen and (min-width: 550px){
+    .container{
+        max-width: 60vw;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 960px){
+    .container{
+        max-width: 35vw;
+        margin: auto;
+    }
+}

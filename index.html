@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Countdown-timer</title>
+</head>
+<body>
+<!--LOADING SCREEN-->
+<div class="loading-spinner" id="loading-spinner">
+    <div class="spinner"></div>
+</div>
+<!--END LOADING SCREEN-->
+<video class="video-background" loop muted autoplay>
+    <source src="GeometricA.mp4">
+</video>
+<div class="video-overlay"></div>
+<!--CONTAINER-->
+<div class="container">
+<!--INPUT-->
+    <div class="input-container" id="input-container">
+        <h1>CREATE EVENT</h1>
+        <form class="form" id="countdownForm">
+            <label for="title">Name</label>
+            <input type="text" id="title" placeholder="Enter event name">
+
+            <label for="date-picker">Date of event</label>
+            <input type="date" id="date-picker">
+            <button type="submit">CREATE</button>
+        </form>
+    </div>
+<!--COUNTDOWN-->
+    <div class="countdown" id="countdown" hidden>
+        <h1 class="countdown-title" id="countdown-title">Countdown title</h1>
+        <ul>
+            <li><span></span>Days</li>
+            <li><span></span>Hours</li>
+            <li><span></span>Minutes</li>
+            <li><span></span>Seconds</li>
+        </ul>
+        <button id="countdown-button">Reset</button>
+    </div>
+<!--COMPLETE-->
+    <div class="complete" id="complete" hidden >
+        <h1 class="complete-title">Countdown Complete!!</h1>
+        <h1 id="complete-info"></h1>
+        <button id="complete-button">Start new Countdown</button>
+    </div>
+</div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+</body>
+</html>
